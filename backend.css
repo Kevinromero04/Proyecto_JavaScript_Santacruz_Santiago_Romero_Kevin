@@ -1,8 +1,17 @@
+/*@import url('https://fonts.cdnfonts.com/css/star-wars');*/
 .contenedor{
-    color: red;
+    color: rgb(99, 87, 87);
     border: black solid ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 #uno_por_uno{
     margin: blue solid 2px;
+    letter-spacing: 1px;
+    font-family: 'Star Wars', sans-serif;
+    border: blue solid 2px;
+    background: rgb(227, 224, 224);
+    width: 25%;
 }
