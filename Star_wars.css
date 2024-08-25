@@ -145,3 +145,11 @@ body{
   background: transparent;
   width: 25%;
 }
+
+#dos_por_uno {
+  border-radius: 5%;
+  font-family: 'Star Wars', sans-serif;
+  border: white solid 2px;
+  background: transparent;
+  width: 25%;
+  color: rgb(255, 226, 140);}

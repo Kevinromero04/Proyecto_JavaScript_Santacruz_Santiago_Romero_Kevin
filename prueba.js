@@ -24,7 +24,7 @@ const url_vehiculos = "https://www.swapi.tech/api/vehicles/";
 const url_starchips = "https://www.swapi.tech/api/starships/";
 const url_planets = "https://www.swapi.tech/api/planets/";
 
-async function buscar_uno_personaje22(jiji) {
+async function todos_personaje(jiji) {
   if (jiji > 0) {
     const lista2 = document.querySelector(".contenedor");
 
@@ -65,4 +65,34 @@ async function buscar_uno_personaje22(jiji) {
   }
 }
 
-buscar_uno_personaje22();
+//todos_personaje();
+async function todos_especies() {
+  console.log("Esto puede tomara de 1 min a 3 min");
+  let numero_especie = 37;
+
+  for (let num = 1; num <= numero_especie; num++) {
+    try {
+      const res = await fetch(url_especies + num);
+      const respuesta = await res.json();
+      console.log(
+        "El nombre de la especie",
+        respuesta.result.properties.name,
+        "\nTiene las siguentes caracteristicas: \n-Colores de pelo:",
+        respuesta.result.properties.hair_colors,
+        "\n-Colores de cuerpo:",
+        respuesta.result.properties.skin_colors,
+        "\n-Colores de ojos:",
+        respuesta.result.properties.eye_colors,
+        "\n-Lenguaje:",
+        respuesta.result.properties.language,
+        "\n-Altura promedio:",
+        respuesta.result.properties.average_height,
+        "\n-Esperanza de vida:",
+        respuesta.result.properties.average_lifespan
+      );
+    } catch (error) {
+      console.error(error, "Algo salió mal");
+    }
+  }
+}
+todos_especies();
