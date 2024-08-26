@@ -125,8 +125,6 @@ body{
   margin: 0.5%;
   border:2 px solid white;
   overflow-y: scroll;
-  scrollbar-width: auto;
-  scrollbar-color: yellow, red;
 }
 .contenedor {
   color: rgb(255, 226, 140);
@@ -145,11 +143,17 @@ body{
   background: transparent;
   width: 25%;
 }
-
+li{
+  list-style: none;
+}
 #dos_por_uno {
   border-radius: 5%;
   font-family: 'Star Wars', sans-serif;
   border: white solid 2px;
   background: transparent;
   width: 25%;
-  color: rgb(255, 226, 140);}
+  color: rgb(255, 226, 140);
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 30px;
+}
