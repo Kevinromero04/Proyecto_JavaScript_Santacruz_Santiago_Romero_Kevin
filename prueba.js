@@ -24,8 +24,8 @@ const url_vehiculos = "https://www.swapi.tech/api/vehicles/";
 const url_starchips = "https://www.swapi.tech/api/starships/";
 const url_planets = "https://www.swapi.tech/api/planets/";
 
-async function todos_personaje(jiji) {
-  if (jiji > 0) {
+async function todos_personaje() {
+
     const lista2 = document.querySelector(".contenedor");
 
     try {
@@ -63,7 +63,6 @@ async function todos_personaje(jiji) {
       console.error(error, "Algo salió mal");
     }
   }
-}
 
 //todos_personaje();
 async function todos_especies() {

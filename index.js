@@ -6,17 +6,12 @@ const url_planets = "https://www.swapi.tech/api/planets/";
 var jiji = 0;
 
 var nn = document.querySelector("#jaja");
-nn.addEventListener("click", async (e) => {
-  jiji += 1;
-  console.log(jiji);
+nn.addEventListener("click", buscar_uno_personaje22)
 
-  await buscar_uno_personaje22(jiji);
-});
-async function buscar_uno_personaje22(jiji) {
-  if (jiji >= 1) {
-    var lista2 = document.querySelector(".contenedor");
-
+async function buscar_uno_personaje22() {
     try {
+      var lista2 = document.querySelector(".contenedor");
+      lista2.innerHTML = ''; 
       let vacio = [];
       for (let numeral = 1; numeral < 83; numeral++) {
         if (numeral === 17) {
@@ -44,14 +39,14 @@ async function buscar_uno_personaje22(jiji) {
         }
         vacio.length = 0;
         lista2.appendChild(devol);
+
       }
     } catch (error) {
       console.error(error, "Algo salió mal");
     }
   }
-}
+
 var contador = 0;
-//buscar_uno_personaje22();
 var espe = document.querySelector("#esp");
 espe.addEventListener("click", async (e) => {
   contador += 1;
@@ -61,8 +56,9 @@ espe.addEventListener("click", async (e) => {
 });
 async function todos_especies(contador) {
   if (contador >= 1) {
+    
     let lista2 = document.querySelector(".contenedor");
-
+    lista2.innerHTML = ''; 
     console.log("Esto puede tomara de 1 min a 3 min");
     let numero_especie = 37;
 
@@ -72,32 +68,36 @@ async function todos_especies(contador) {
         const res = await fetch(url_especies + num);
         const respuesta = await res.json();
         const ul_Espe = document.createElement("ul");
-        ul_Espe.id = "dos_por_uno";
-        console.log(
-          "El nombre de la especie",
-          respuesta.result.properties.name,
-          "\nTiene las siguentes caracteristicas: \n-Colores de pelo:",
-          respuesta.result.properties.hair_colors,
-          "\n-Colores de cuerpo:",
-          respuesta.result.properties.skin_colors,
-          "\n-Colores de ojos:",
-          respuesta.result.properties.eye_colors,
-          "\n-Lenguaje:",
-          respuesta.result.properties.language,
-          "\n-Altura promedio:",
-          respuesta.result.properties.average_height,
-          "\n-Esperanza de vida:",
-          respuesta.result.properties.average_lifespan
-        );
+        ul_Espe.id = "uno_por_uno";
         vacio.push(
           "El nombre de la especie " + respuesta.result.properties.name
         );
         vacio.push("Tiene las siguentes caracteristicas: ");
         vacio.push(
-          "\n-Colores de pelo: " + respuesta.result.properties.hair_colors
+          "Colores de pelo: " + respuesta.result.properties.hair_colors
         );
         vacio.push(
-          "\n-Colores de cuerpo: " + respuesta.result.properties.skin_colors
+          "Colores de cuerpo: " + respuesta.result.properties.skin_colors
+        );
+        vacio.push(
+          "Colores de ojos: " +
+          respuesta.result.properties.eye_colors,
+        );
+        vacio.push(
+          "Lenguaje: " +
+          respuesta.result.properties.language,
+        );
+        vacio.push(
+          "Altura promedio: " +
+          respuesta.result.properties.average_height,
+        );
+        vacio.push(
+          "Esperanza de vida: " +
+          respuesta.result.properties.average_lifespan
+        );
+        vacio.push(
+          "id: " +
+          num
         );
         for (let element of vacio) {
           console.log(element);
@@ -111,8 +111,9 @@ async function todos_especies(contador) {
         console.error(error, "Algo salió mal");
       }
     }
+
   }
-}
+  }
 todos_especies();
 
-//hacer que solo se muestre las especie y no se mezclen con las personas
+//hacer que se vuelvan mas asincronas las funciones para que se pueda imprimir en orden y solo una vez 
