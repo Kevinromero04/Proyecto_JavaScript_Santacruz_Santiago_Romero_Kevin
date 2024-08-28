@@ -36,7 +36,7 @@ body{
     height: 8%;
     cursor: pointer;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.2em; /*HACERLE MEDIA QUERY A ESTE FONT SIZE AL TAMAÑO 0.8 O 0.9 CUANDO LE DEN INSPECCIONAR */
     border-radius: 1rem;
     border: none;
     position: relative;
