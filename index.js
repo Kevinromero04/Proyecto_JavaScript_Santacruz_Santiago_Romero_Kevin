@@ -169,6 +169,7 @@ var planet = document.querySelector("#planets");
 planet.addEventListener("click", todos_planets);
 
 async function todos_planets() {
+  
   if (plan) return;
 
   if (abortController) {
@@ -229,8 +230,6 @@ async function todos_starchips() {
     <div class="submenus">
         <nav class="menus">
             <a id="pasajero"  href="#">Pasajeros </a>
-            <a href="#">opc 4 </a>
-            <a href="#">opc 2 </a>
             <a href="#">opc 4 </a>
             <a href="#">opc 5 </a>
         </nav>
@@ -301,13 +300,25 @@ async function pasajeros() {
       let respuesta = await res.json();
 
       const completado = respuesta.results;
-      completado.forEach((muerte) => {
+      completado.forEach((personaje) => {
+        
         const creador_ul = document.createElement("ul");
         creador_ul.id = "uno_por_uno";
-        const creador_li = document.createElement("li");
 
-        creador_ul.innerHTML = `${muerte.name}<br>Pasajeros: ${muerte.passengers}`;
+        
+        const urlImagen = `${url_img_starships}${personaje.url.split('/')[5]}.jpg`; 
+        const img = document.createElement("img");
+        img.src = urlImagen;
+        img.alt = `Personaje ${personaje.name}`;
+
+        const creador_li = document.createElement("li");
+        creador_ul.innerHTML = `${personaje.name}<br>Pasajeros: ${personaje.passengers}`;
+
+        
+        creador_ul.appendChild(img);
         creador_ul.appendChild(creador_li);
+
+
         lista2.appendChild(creador_ul);
       });
     }
@@ -322,3 +333,4 @@ var peli = false;
 var peliculas = document.querySelector("#peliculas");
 peliculas.addEventListener("click", todos_pelicula);
 
+//cambiar nombre de las variables de personajes las que se usan para entrar al json y cambiar el menu de arriba, terminar la funcion de films y añardirle sub opciones como las otras mas que faltan pos data: ya no aguanto mas
