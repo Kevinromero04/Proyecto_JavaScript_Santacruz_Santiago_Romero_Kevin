@@ -117,22 +117,22 @@ body{
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border:3px solid white;
+  border:3px solid rgb(255, 255, 255);
   border-radius: 10px;
 
 }
 .submenus{
   margin-top: 2vh;
-  width: 80%;
+  width: 100vh;
   height: auto;
-  border: 1.5px solid white ;
+  border: 1.5px solid rgb(255, 255, 255) ;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .menus{
-  width: 90%;
+  width: 80%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -199,6 +199,9 @@ li{
 
 }
 @media (max-width: 952px){
+  .submenus{
+    width: 50vh;
+  }
   .marco{
     display: none;
   }
@@ -237,6 +240,7 @@ li{
   }
 }
 @media (max-width: 669px){
+
   .contenedor{
     gap:5% 5%;
     flex-direction: column;
@@ -254,6 +258,9 @@ li{
   }
 }
 @media (max-width: 411px){
+  .submenus{
+    width: 30vh;
+  }
   .opcciones a{
     font-size: 0.3rem;
     
