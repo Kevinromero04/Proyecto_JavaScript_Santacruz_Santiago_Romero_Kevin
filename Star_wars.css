@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 img{
-  width: 100px;
+  width: 20vh;
+  border-radius: 6px;
 }
 body{
     padding: 0;
@@ -109,6 +110,7 @@ body{
   border: 3px solid rgba(255, 255, 255, 0.479);
   border-radius: 50px;
   margin-right: 8px;
+  overflow: hidden;
 }
 .marco .logo{
   text-align: center;
@@ -207,8 +209,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
-  padding: 0 0 0 0;
+  padding: 15px 0 0 0;
+  gap:10px;
 }
 
 #uno_por_uno li{
