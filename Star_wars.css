@@ -1,11 +1,29 @@
 *{
     box-sizing: border-box;
 }
+img{
+  width: 100px;
+}
 body{
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100vh;
+    position: relative;
+}
+.fondo{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  justify-content: center;
+  z-index: 0;
+  align-items: center;
+}
+.fondo2{
+  display: none;
+  transition: .6s;
 }
 .navbarprincipal{
   position: fixed;
@@ -13,8 +31,11 @@ body{
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 14%;
+    width: 13%;
+    border:2px solid rgba(255, 255, 255, 0.479);
+    border-radius: 20px;
     background: transparent;
+    z-index: 1;
 }
 .opcciones{
     display: flex;
@@ -36,20 +57,21 @@ body{
     height: 8%;
     cursor: pointer;
     color: #fff;
-    font-size: 1.2em; /*HACERLE MEDIA QUERY A ESTE FONT SIZE AL TAMAÑO 0.8 O 0.9 CUANDO LE DEN INSPECCIONAR */
+    font-size: 0.8rem; /*HACERLE MEDIA QUERY A ESTE FONT SIZE AL TAMAÑO 0.8 O 0.9 CUANDO LE DEN INSPECCIONAR */
     border-radius: 1rem;
     border: none;
     position: relative;
-    background: #100720;
+    background: radial-gradient( black, #501000,red);
     transition: 0.1s;
     overflow: hidden;
+    box-shadow: 0 0 2px red;
   }
   
   .opcciones a::after {
     content: '';
     width: 100%;
     height: 100%;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(255, 255, 78) 17.8%, rgb(240, 0, 16) 100.2% );
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  #501000 17.8%, rgb(255, 0, 0) 100.2% );
     filter: blur(15px);
     z-index: -1;
     position: absolute;
@@ -59,17 +81,23 @@ body{
   
   .opcciones a:active {
     transform: scale(0.9) rotate(3deg);
-    background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(255, 255, 78) 17.8%, rgb(240, 0, 16) 100.2% );
+    background: radial-gradient( circle farthest-corner at 10% 20%,  #501000 17.8%, rgb(255, 0, 0) 100.2% );
     transition: 0.5s;
   }
-
+.opcciones a:hover{
+  transition: .6s;
+  box-shadow: 0 0 5px red,
+  0 0 6px red,
+  0 0 30px red,
+  0 0 60px rgb(184, 119, 0);
+}
 /*fin estas opcciones*/
 .container{
   width: 100%;
   height: 100%;
-  background-color: black;
   display: flex;
   flex-direction:column;
+  position: relative;
 }
 .marco{
   width: auto;
@@ -78,7 +106,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 3px solid white;
+  border: 3px solid rgba(255, 255, 255, 0.479);
   border-radius: 50px;
   margin-right: 8px;
 }
@@ -103,7 +131,6 @@ body{
 }
 .marco .logo h1:hover{
   color: rgb(255, 255, 16);
-  font-size: 3.4em;
   text-shadow: 0px 0px 20px rgb(161, 161, 0),
   0px 0px 60px rgb(235, 235, 0),
   0px 0px 70px rgba(157, 0, 81, 0.846);
@@ -117,7 +144,7 @@ body{
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  border:3px solid rgb(255, 255, 255);
+  border:3px solid rgba(255, 255, 255, 0.479);
   border-radius: 10px;
 
 }
@@ -125,7 +152,7 @@ body{
   margin-top: 2vh;
   width: 100vh;
   height: auto;
-  border: 1.5px solid rgb(255, 255, 255) ;
+  border: 1.5px solid rgba(255, 255, 255, 0.479) ;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -156,12 +183,12 @@ body{
   height: 100%;
   padding: 2%;
   margin-top: 2.5vh;
-  border:2 px solid white;
+  border:2 px solid rgba(255, 255, 255, 0.479);
   overflow-y: scroll;
 
 }
 .contenedor {
-  color: rgb(255, 226, 140);
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8rem;
@@ -173,30 +200,34 @@ body{
 #uno_por_uno {
   border-radius: 5px;
   font-family: 'Star Wars', sans-serif;
-  border: white solid 2px;
+  border: rgba(255, 255, 255, 0.479) solid 1px;
   background: transparent;
+  color:rgba(255, 226, 140, 0.712);
   width: 30%;
-}
-li{
-  list-style: none;
-  margin-right: 30%;
-}
-#dos_por_uno {
-  border-radius: 5px;
-  font-family: 'Star Wars', sans-serif;
-  border: white solid 2px;
-  background: transparent;
-  width: auto;
-  color: rgb(255, 226, 140);
   display: flex;
-  flex-wrap: wrap;
-  padding-right: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 0 0 0;
 }
+
+#uno_por_uno li{
+  height: 10vh;
+  list-style: none;
+  margin: 0 0;
+}
+#uno_por_uno:hover{
+  color:rgba(255, 226, 140, 0.966);
+}
+
+
 @media (max-width: 1300px){
   .opcciones a{
-    font-size: 0.6rem;
+    font-size: 0.57rem;
   }
-
+  #fuera{
+    display: none;
+  }
 }
 @media (max-width: 952px){
   .submenus{
@@ -213,7 +244,7 @@ li{
     flex-direction: row;
     width: 99%;
     justify-content: space-between;
-    border:3px solid white;
+    border:3px solid rgba(255, 255, 255, 0.479);
     border-radius: 20px;
   }
   .opcciones a{
@@ -240,7 +271,19 @@ li{
   }
 }
 @media (max-width: 669px){
-
+  .fondo2{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    justify-content: center;
+    z-index: 0;
+    align-items: center;
+  }
+  #fuera{
+    display: none;
+  }
   .contenedor{
     gap:5% 5%;
     flex-direction: column;
@@ -258,6 +301,9 @@ li{
   }
 }
 @media (max-width: 411px){
+  #uno_por_uno{
+    padding: 0 0 0 0;
+  }
   .submenus{
     width: 30vh;
   }
