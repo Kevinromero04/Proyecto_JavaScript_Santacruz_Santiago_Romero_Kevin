@@ -9,6 +9,16 @@ Este proyecto es una página web temática dedicada al universo de Star Wars, qu
 - **HTML**: Estructura básica de la página.
 - **CSS**: Estilos y diseño visual.
 - **JavaScript**: Manejo de interacciones y consultas.
+## Tabla de contenido
+ |Indice |Titulo|
+ |--|--|
+ |1|Instalacion|
+ |2|Navegación|
+ |3|Uso|
+ |4|Interaciones JavaScript|
+ |5|Personalizacion|
+ |6|Contribucion|
+ |7|Contacto|
 
 ## Instalación
 
@@ -43,6 +53,7 @@ Este proyecto es una página web temática dedicada al universo de Star Wars, qu
   - **Especie**
   - **FILMS**
 - **Área Principal**: Un área de contenido que puede ser dinámica.
+- **Facilita**:Se facilita los datos mas centralizados y menos dispersos adjuntos en esta pagina usandose asi para tener informacion sobre la frnaquisia de Star Wars.
 
 ### Interacciones JavaScript
 
@@ -71,11 +82,34 @@ El archivo `index.js` maneja la lógica de interacciones y consultas para cada s
 - **JavaScript**: Modifica `index.js` para cambiar la lógica de las interacciones y cómo se gestionan las consultas de cada sección.
 
 ## Contribuciones
+¡Las contribuciones son bienvenidas! Si deseas contribuir a este proyecto, por favor sigue estos pasos: 
+Puedes contribuir creando un fork del repositorio y enviando un pull request y tambien sigue el flujo de trabajo estándar para contribuir a proyectos en GitHub.
 
+|Tipo de contribución|Aceptado|Comentarios|
+|--|--|--|
+|Reporte de errores|Sí|Utiliza la sección de issues en GitHub|
+|Nuevas características|Sí|Envía un pull request con tus propuestas|
+
+> [!TIP]
+> Esto es un resumen de pasos para la contribucion al proyecto
+>1. Clonar
+>       ```bash
+>    git clone https://github.com/Kevinromero04/Proyecto_JavaScript_Santacruz_Santiago_Romero_Kevin.git
+>       ```
+>2. Crea una nueva rama:
+>    ```bash
+>    git branch nueva-funcionalidad
+>    ```
+>3. Realiza tus cambios y haz commit:
+>    ```bash
+>    git commit -m 'Añadir nueva funcionalidad'
+>    ```
+>4. Envía un pull request.
 Las contribuciones son bienvenidas. Si deseas colaborar en el proyecto, por favor, sigue el flujo de trabajo estándar para contribuir a proyectos en GitHub.
 
 ## Licencia
+Este proyecto está licenciado bajo la Licencia MIT.
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+>La Licencia MIT es una licencia de software libre permisiva que es ampliamente utilizada en la comunidad de software
 
 ---
