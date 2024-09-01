@@ -21,7 +21,7 @@ Este proyecto es una página web temática dedicada al universo de Star Wars, qu
 2. **Navega a la carpeta del proyecto:**
 
     ```bash
-    cd <Star_wars_Santiago_Kevin>
+    cd <Proyecto_JavaScript_Santacruz_Santiago_Romero_Kevin>
     ```
 
 3. **Asegúrate de tener los archivos multimedia:**
